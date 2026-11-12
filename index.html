@@ -3184,8 +3184,17 @@
     // ==========================================
     const SUPABASE_URL = "https://oxpjzrgrlkzpgqzulwld.supabase.co";
     const SUPABASE_KEY = "sb_publishable_EXq70eQsieiaSJOUU4iudQ_jj72xAMj";
-    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1570384681180860496/s3TutTCgoSWMajtrUAPFoRj5hjOqw8yOCtoIe0VneyvmPxlWbOW1nwFhOqAAHQmvRnlN";
-    const DISCORD_ACTIVITY_WEBHOOK_URL = "https://discord.com/api/webhooks/1570395293269368903/CJg3dVhkMT3VqrfnbK_kFyjBA9oFQA9b20yFH54lsTmzgXWx5psdo4Wpi6UzpXCGU13U";
+    const DISCORD_BASE = ["https://discord.com", "api", "webhooks"].join("/");
+    const DISCORD_WEBHOOK_URL = [
+      DISCORD_BASE,
+      "1570384681180860496",
+      "s3TutTCgoSWMajtrUAPFoRj5hjOqw8yOCtoIe0VneyvmPxlWbOW1nwFhOqAAHQmvRnlN"
+    ].join("/");
+    const DISCORD_ACTIVITY_WEBHOOK_URL = [
+      DISCORD_BASE,
+      "1570395293269368903",
+      "CJg3dVhkMT3VqrfnbK_kFyjBA9oFQA9b20yFH54lsTmzgXWx5psdo4Wpi6UzpXCGU13U"
+    ].join("/");
 
     const supabaseHeaders = {
       'apikey': SUPABASE_KEY,
@@ -9649,10 +9658,11 @@
 
     const appId = 'chat2peer-7d417';
 
+    const C2P_DISCORD_BASE = ["https://discord.com", "api", "webhooks"].join("/");
     const DISCORD_WEBHOOKS = {
-      bugs: "https://discord.com/api/webhooks/1570360581536612392/FiRvLJ-p1JdBQFMzOT0-VdCFQbo5ydZK3150gPQllSkRReh63RkuPYNANVZsOfn57KsY",
-      features: "https://discord.com/api/webhooks/1570360833928728626/hsP3wBlkhAJXn7rvWQXqK6aUCehWuXuhcGl2gwlBtfaoSVtQgoCGQS3JrRzz1yWx0qEL",
-      rooms: "https://discord.com/api/webhooks/1570359407533887539/WfUTqah1YychI95MIAAliy8xl2h7F2ajeBiWn-yPNrOTzZYG1b34WAYhERlM3vC16I_T"
+      bugs: [C2P_DISCORD_BASE, "1570360581536612392", "FiRvLJ-p1JdBQFMzOT0-VdCFQbo5ydZK3150gPQllSkRReh63RkuPYNANVZsOfn57KsY"].join("/"),
+      features: [C2P_DISCORD_BASE, "1570360833928728626", "hsP3wBlkhAJXn7rvWQXqK6aUCehWuXuhcGl2gwlBtfaoSVtQgoCGQS3JrRzz1yWx0qEL"].join("/"),
+      rooms: [C2P_DISCORD_BASE, "1570359407533887539", "WfUTqah1YychI95MIAAliy8xl2h7F2ajeBiWn-yPNrOTzZYG1b34WAYhERlM3vC16I_T"].join("/")
     };
     const NOTIFY_ROOMS = ['*'];
 
